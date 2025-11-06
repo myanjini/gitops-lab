@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bgd-app
+  namespace: argocd 
+spec:
+  project: default 
+  source:
+    repoURL: https://github.com/myanjini/gitops-lab.git 
+    path: manifests
+    targetRevision: main
+  destination: 
+    namespace: bgd
+    server: https://kubernetes.default.svc
+
