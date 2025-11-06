@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bgd
+  namespace: bgd
+  labels:
+    app: bgd
+spec:
+  selector:
+    app: bgd
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
